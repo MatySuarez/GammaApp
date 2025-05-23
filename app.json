@@ -9,22 +9,56 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+      "plugins": [
+        [
+          "@config-plugins/react-native-ble-plx",
+          {
+            "isBackgroundEnabled": false,
+            "modes": [
+              "peripheral",
+              "central"
+            ],
+            "bluetoothAlwaysPermission": "Allow $(PRODUCT_NAME) to connect to bluetooth devices.",
+            "bluetoothPeripheralUsageDescription": "Your BLE communication description"
+          }
+        ]
+      ]
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.GammaApp",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Esta aplicación requiere acceso a la cámara para tomar fotos.",
+        "NSPhotoLibraryAddUsageDescription": "Esta aplicación requiere acceso a la galería para guardar fotos.",
+        "NSBluetoothAlwaysUsageDescription": "We use Bluetooth to connect to devices"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "BLUETOOTH",
+        "BLUETOOTH_ADMIN",
+        "ACCESS_COARSE_LOCATION"
+      ],
+      "package": "com.anonymous.GammaApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a29110df-c4fb-45ca-9d3d-6f2f2cdfda19"
+      }
+    },
+    "plugins": [
+      "react-native-ble-plx"
+    ]
   }
 }
