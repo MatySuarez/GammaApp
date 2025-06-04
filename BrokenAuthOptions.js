@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { registerWithGoogle, registerWithFacebook, registerWithApple } from './firebase';
+// import { registerWithGoogle, registerWithFacebook, registerWithApple } from './firebase';
 
 const Signup = () => {
   const handleGoogleSignup = () => {
